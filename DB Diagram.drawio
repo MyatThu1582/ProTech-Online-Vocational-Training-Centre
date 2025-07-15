@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.7">
+  <diagram name="Page-1" id="hiuSERij68VwZIGt3HrL">
+    <mxGraphModel dx="1100" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="w_pe8mge4aM9Xq12h-Tg-1" value="Table: users&lt;br&gt;Id (Primary Key) (Forigen Key:role_user)&lt;br&gt;name (Text) (255)&lt;br&gt;email (Text) (255)&lt;br&gt;&lt;div&gt;gender (Text) (25)&lt;/div&gt;&lt;div&gt;TimeStamp&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="120" width="230" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="9HccbvvZ-AA2k1e7KVH--3" value="Table:role_user&lt;div&gt;Id(Primary Key)&lt;/div&gt;&lt;div&gt;role_id(int)(Forigen Key:role)&lt;/div&gt;&lt;div&gt;user_id(int)(Foregin Key:user)&lt;/div&gt;&lt;div&gt;TimeStamp&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="500" y="120" width="210" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="9HccbvvZ-AA2k1e7KVH--5" value="Table:roles&lt;div&gt;id(Primary Key)(Forigen Key:role_user)&lt;/div&gt;&lt;div&gt;role_name(Text)(255)&lt;/div&gt;&lt;div&gt;TimeStamp&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="610" y="360" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="9HccbvvZ-AA2k1e7KVH--12" value="Table:Course&lt;div&gt;&lt;div&gt;id(Primary Key)&lt;/div&gt;&lt;div&gt;description (Text) (100)&lt;br&gt;&lt;/div&gt;&lt;div&gt;content(Text) (255)&lt;/div&gt;&lt;div&gt;image(varchar)(255)&lt;/div&gt;&lt;div&gt;price(int) (11)&lt;/div&gt;&lt;/div&gt;&lt;div&gt;created_at (TimeStamp)&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="303" y="362" width="220" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="9HccbvvZ-AA2k1e7KVH--14" value="Table:vi&lt;span style=&quot;background-color: initial;&quot;&gt;deos&lt;/span&gt;&lt;div&gt;&lt;div&gt;id(Primary Key)&lt;/div&gt;&lt;/div&gt;&lt;div&gt;title(Text)(255)&lt;/div&gt;&lt;div&gt;chapter_id(Forigen Key:chapter)&lt;/div&gt;&lt;div&gt;video_url(Text)(1000)&lt;/div&gt;&lt;div&gt;description(Text)(255)&lt;/div&gt;&lt;div&gt;created_at(&lt;span style=&quot;background-color: initial;&quot;&gt;TimeStamp)&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="603" y="831" width="220" height="139" as="geometry" />
+        </mxCell>
+        <mxCell id="vwmhd769s6nkDj53E7GC-1" value="Table : Chapters&lt;div&gt;id(primary_key)&lt;/div&gt;&lt;div&gt;title(text)(100)&lt;/div&gt;&lt;div&gt;course_id(Foreign_key:Course)&lt;/div&gt;&lt;div&gt;created_at (TimeStamp)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="303" y="833" width="220" height="137" as="geometry" />
+        </mxCell>
+        <mxCell id="vwmhd769s6nkDj53E7GC-3" value="Table : Request&lt;div&gt;id(primary_key)&lt;/div&gt;&lt;div&gt;user_id(foreign_key:users)&lt;/div&gt;&lt;div&gt;course_id(foreign_key:Course)&lt;/div&gt;&lt;div&gt;payment_no(varchar)(100)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="298" y="605" width="230" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="vwmhd769s6nkDj53E7GC-4" value="Table : Permission&lt;div&gt;user_id(foreign_key:users)&lt;/div&gt;&lt;div&gt;course_id(foreign_key:course)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="608" y="606" width="220" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-3" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="428" y="200" as="sourcePoint" />
+            <mxPoint x="493" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-4" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="419" y="335" as="sourcePoint" />
+            <mxPoint x="500" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-5" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="612" y="294" as="sourcePoint" />
+            <mxPoint x="660" y="344" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-6" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="508" as="sourcePoint" />
+            <mxPoint x="410" y="582" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-7" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="534" y="662" as="sourcePoint" />
+            <mxPoint x="599" y="662" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-8" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="536" y="805" as="sourcePoint" />
+            <mxPoint x="592" y="754" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-9" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="532" y="887" as="sourcePoint" />
+            <mxPoint x="597" y="887" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-12" value="&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Table : Questions&lt;/span&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;id(primary_key)&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;question(varchar)(255)&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;course_id(foreign_key:Course)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="26" y="605" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-13" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="590" as="sourcePoint" />
+            <mxPoint x="300" y="509" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-14" value="&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;Table : Answers&lt;/span&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;id(primary_key)&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;right_answer(varchar)(100)&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;wrong_answer1(varchar)(100)&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;wrong_answer2(varchar)(100)&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;wrong_answe3(varchar)(100)&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;question_id(foreign_key:Questions)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="27" y="833" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="df0uk5Mg0p3eB3AydfPe-15" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="132" y="744" as="sourcePoint" />
+            <mxPoint x="132" y="818" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
