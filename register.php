@@ -2,10 +2,6 @@
 include 'Controllers/query.ctr.php';
 $query = new Query();
 
-if(!empty($_SESSION['auth'])){
-  $query->redirect('Index.php');
-}
-
 if (empty($_SESSION)) {
   $_SESSION['language'] = '';
 }
@@ -31,7 +27,6 @@ if (!empty($_SESSION['language']) && $_SESSION['language'] == 'Eng' || $_SESSION
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <?php// include 'link.php'; ?>
     <link rel="stylesheet" href="boostrap/css/bootstrap.min.css">
     <script src="boostrap/js/bootstrap.min.js"></script>
     <link href="font.css" rel="stylesheet">
@@ -112,7 +107,20 @@ if (!empty($_SESSION['language']) && $_SESSION['language'] == 'Eng' || $_SESSION
     .none{
         display: none;
     }
+/* ================================
+    FLOAT-UP ANIMATION (clean + smooth)
+  ================================= */
+  .float-up {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
 
+  /* When visible in viewport */
+  .float-up.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
     @media(max-width:1000px){
       .tohide{
         display: none;
@@ -240,12 +248,12 @@ $comfirmpassworderror = "";
                 <li class="nav-item">
                     <a class="nav-link menu" href="view/course.php"><?php echo $home['menu'][1]; ?></a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link menu" href="view/course.php"><?php// echo $home['menu'][]; ?></a>
-                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link menu" href="view/donate.php"><?php echo $home['menu'][2]; ?></a>
-                </li>
+                   <a class="nav-link menu" href="view/announcement.php"><?php echo $home['menu'][2]; ?></a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link menu" href="view/clients.php"><?php echo $home['menu'][6]; ?></a>
+               </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#"></a>
                 </li>
@@ -440,7 +448,7 @@ $comfirmpassworderror = "";
   </div>
   <!-- for responsive -->
   </div>
-    <div class="container register-div mt-5 mb-5 text-light pb-3" style="margin-top:105px !important;">
+    <div class="container register-div mt-5 mb-5 text-light pb-3 float-up" style="margin-top:130px !important;">
       <div class="row mt-5 pb-4 pt-3">
         <div class="col-7 text-center">
           <!-- <img src="images/sign_up.png" alt=""> -->

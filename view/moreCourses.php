@@ -26,32 +26,60 @@ $query = new Query();
   <div class="container" style="margin-top:120px;">
     <h4 class="mb-4"><?php echo $moreCourses['toptext']; ?></h4>
     <div class="row searchandcategories">
-      <div class="col-9 full">
-        <div class="btns text-center">
-          <?php
-          $mainSubjectDatas = $query->selectAllNoDesc('main_subjects');
-          foreach ($mainSubjectDatas as $mainSubjectData) {
-            ?>
-              <a href="?subject_id=<?php echo $mainSubjectData['id']; ?>">
-                <button type="button" name="button" class="subject_btn" id="subject_<?php echo $mainSubjectData['id']; ?>btn" style="<?php if($_GET['subject_id'] == $mainSubjectData['id'] && empty($_SESSION['search_course'])){echo "background-color: rgba(0,0,255,0.8); color:white;"; } ?>"><?php echo $mainSubjectData['subject_name']; ?></button>
-              </a>
+      <div class="col-8 mb-4 full">
+        <div class="position-relative pe-5 ps-5">
+          <!-- 🔁 Scroll Wrapper -->
+          <div class="d-flex overflow-auto hide-scrollbar px-5" id="categoryScroll" style="scroll-behavior: smooth;">
             <?php
-              }
+            $mainSubjectDatas = $query->selectAllNoDesc('main_subjects');
+            foreach ($mainSubjectDatas as $mainSubjectData) {
+              $isActive = ($_GET['subject_id'] == $mainSubjectData['id'] && empty($_SESSION['search_course'])) ? 'background-color: rgba(0,0,255,0.8); color:white;' : '';
             ?>
+              <a href="?subject_id=<?php echo $mainSubjectData['id']; ?>" class="me-2 flex-shrink-0">
+                <button type="button" class="subject_btn" id="subject_<?php echo $mainSubjectData['id']; ?>btn" style="<?php echo $isActive; ?>">
+                  <?php echo $mainSubjectData['subject_name']; ?>
+                </button>
+              </a>
+            <?php } ?>
           </div>
+
+          <!-- ⬅️ Prev Arrow -->
+          <button class="category-arrow left-arrow glass-arrow" onclick="scrollCategory(-200)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#007bff" class="arrow-icon" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm2.354 11.354a.5.5 0 0 1-.708 0L6.5 8.207l3.146-3.147a.5.5 0 0 1 .708.708L7.707 8l2.647 2.646a.5.5 0 0 1 0 .708z"/>
+            </svg>
+          </button>
+
+          <!-- ➡️ Next Arrow -->
+          <button class="category-arrow right-arrow glass-arrow" onclick="scrollCategory(200)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#007bff" class="arrow-icon" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zM6.646 4.646a.5.5 0 0 1 .708 0L10.5 8l-3.146 3.146a.5.5 0 0 1-.708-.708L9.293 8 6.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+          </button>
+
+
+        </div>
       </div>
-      <div class="col-3 full searchdiv" style="">
-        <form class="" action="" method="post">
-          <div class="search">
-            <input class="search_course" type="search" value="<?php if(!empty($_SESSION['search_course'])){ echo $_SESSION['search_course'];} ?>" name="search" placeholder="<?php echo $moreCourses['search_placeholder']; ?>" aria-label="Search">
-            <button type="submit" name="searchbtn" class="btn float-end searchbtn" style="margin-top: -35px;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-              </svg>
-            </button>
-          </div>
+      <div class="col"></div>
+      <div class="col-3 full searchdiv mt-2">
+        <form action="" method="post" class="position-relative">
+          <input 
+            type="search" 
+            name="search" 
+            class="form-control course-search-input" 
+            placeholder="<?php echo $moreCourses['search_placeholder']; ?>" 
+            value="<?php if(!empty($_SESSION['search_course'])){ echo $_SESSION['search_course']; } ?>"
+            aria-label="Search"
+          >
+          <button type="submit" name="searchbtn" class="search-icon-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
         </form>
       </div>
+
     </div>
     <div class="row ms-5 me-5 mb-5 mt-4 nomargin">
       <?php

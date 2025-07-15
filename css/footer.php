@@ -363,6 +363,29 @@
 </div>
 <!-- Footer For Responsive -->
 <script>
+function scrollCategory(distance) {
+  const scrollContainer = document.getElementById('categoryScroll');
+  scrollContainer.scrollBy({ left: distance, behavior: 'smooth' });
+}
+
+// Save scroll before clicking category
+document.addEventListener('DOMContentLoaded', function () {
+  const scrollContainer = document.getElementById('categoryScroll');
+  const categoryLinks = document.querySelectorAll('#categoryScroll a');
+
+  // Save scroll position when a category is clicked
+  categoryLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      sessionStorage.setItem('categoryScrollLeft', scrollContainer.scrollLeft);
+    });
+  });
+
+  // Restore scroll position
+  const savedScrollLeft = sessionStorage.getItem('categoryScrollLeft');
+  if (savedScrollLeft !== null) {
+    scrollContainer.scrollLeft = parseInt(savedScrollLeft);
+  }
+});
 
 // Animate any float-up elements when visible
 document.querySelectorAll('.float-up').forEach(el => {

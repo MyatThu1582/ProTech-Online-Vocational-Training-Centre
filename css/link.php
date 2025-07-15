@@ -95,7 +95,7 @@
     text-decoration: none;
     color: black;
   }
-  .subject_btn{
+  /* .subject_btn{
     width:150px;
     position: relative;
     padding:6px 0px;
@@ -110,10 +110,56 @@
   .subject_btn:hover{
     color: white;
     background-color: rgba(0,0,255,0.8);
+  } */
+   .subject_btn {
+    background: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    padding: 10px 20px;
+    margin: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
   }
-  .search{
-    border-bottom: 1px solid grey;
+
+  .subject_btn:hover,
+  .subject_btn.active {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
   }
+  .course-search-input {
+  padding: 10px 38px 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.course-search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+.search-icon-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-icon-btn:hover svg {
+  stroke: #007bff;
+  transform: scale(1.1);
+}
+
   .search_course{
     width: 230px;
     padding: 6px 10px;
@@ -476,7 +522,149 @@
   opacity: 1;
   transform: translateY(0);
 }
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.glass-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 6px 10px;
+  color:hsl(200, 95.90%, 47.50%); /* deep black navy */
 
+  transition: all 0.3s ease;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.glass-arrow svg {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.glass-arrow:hover {
+  background: rgba(0, 123, 255, 0.15);
+  color: #fff;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.glass-arrow:hover svg {
+  transform: translateX(2px);
+  stroke: #fff;
+}
+
+.left-arrow {
+  left: -10px;
+}
+
+.right-arrow {
+  right: -10px;
+}
+
+.client-tile {
+    position: relative;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  .client-tile:hover {
+    transform: scale(1.03);
+  }
+
+  .client-tile .overlay {
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: 0.4s ease;
+  }
+
+  .client-tile:hover .overlay {
+    opacity: 1;
+  }
+
+  .overlay .content h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .overlay .content small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+
+  .client-link-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .client-card {
+    height: 260px;
+    position: relative;
+    border-radius: 12px;
+  }
+
+  .client-img {
+    height: 100%;
+    object-fit: contain;
+    background: #f8f9fa;
+    transition: transform 0.4s ease;
+  }
+
+  .client-card:hover .client-img {
+    transform: scale(1.03);
+  }
+
+  .client-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .client-card:hover .client-overlay {
+    opacity: 1;
+  }
+
+  .client-overlay h5 {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .client-overlay small {
+    font-size: 0.85rem;
+    color: #ddd;
+  }
 @media(max-width:1000px){
   .tohide{
     display: none;

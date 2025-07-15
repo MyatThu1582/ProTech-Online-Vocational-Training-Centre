@@ -111,6 +111,20 @@ if (!empty($_SESSION['language']) && $_SESSION['language'] == 'Eng' || $_SESSION
     .none{
       display: none;
     }
+    /* ================================
+      FLOAT-UP ANIMATION (clean + smooth)
+    ================================= */
+    .float-up {
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    /* When visible in viewport */
+    .float-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
     @media(max-width:1000px){
       .tohide{
         display: none;
@@ -214,11 +228,11 @@ $passworderror = "";
                <li class="nav-item">
                    <a class="nav-link menu" href="view/course.php"><?php echo $home['menu'][1]; ?></a>
                </li>
-               <!-- <li class="nav-item">
-                   <a class="nav-link menu" href="view/course.php"><?php// echo $home['menu'][]; ?></a>
-               </li> -->
                <li class="nav-item">
-                   <a class="nav-link menu" href="view/donate.php"><?php echo $home['menu'][2]; ?></a>
+                   <a class="nav-link menu" href="view/announcement.php"><?php echo $home['menu'][2]; ?></a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link menu" href="view/clients.php"><?php echo $home['menu'][6]; ?></a>
                </li>
                <li class="nav-item">
                  <a class="nav-link" href="#"></a>
@@ -325,7 +339,7 @@ $passworderror = "";
      <div class="container">
        <div class="d-flex">
          <div class="col-7 d-flex">
-           <div class="col-4 mb-1" style="">
+           <div class="col-4 mb-1">
              <!-- <a href="Index.php" style="text-decoration: none;" class="text-dark h2"><b>ProTech</b></a> -->
              <?php
              $link = $_SERVER['PHP_SELF'];
@@ -415,7 +429,7 @@ $passworderror = "";
  <!-- for responsive -->
  </div>
 
- <div class="container main-div pb-5 pt-2 text-light" style="margin-top:130px; margin-bottom:60px;">
+ <div class="container main-div pb-5 pt-2 text-light float-up" style="margin-top:130px; margin-bottom:60px;">
   <div class="row mt-5 ms-5 nomargin">
     <div class="col-4 me-5 p-5 full nomargin inputs">
       <h2 class="mb-4">Join Our Galaxies</h2>

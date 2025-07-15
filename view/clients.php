@@ -77,63 +77,94 @@ $query = new Query();
       <a href="course.php" class="text-light"><?php echo $clients['title']; ?><a>
     </h2>
   </div>
-  <div class="container mt-5 mb-5 pb-5 nomargin">
-    <div class="card-container row mb-no" style="margin-bottom:100px;">
-        <div class="col-6 text-center full mlrb">
-          <div class="card mb-4" style="box-shadow: 0px 8px 16px rgba(0,0,0,0.5);">
-            <div class="card-body">
-              <img src="../images/sms.png" alt="" width="100%" height="300px">
-            </div>
-          </div>
-          <a href="http://shwemyanmarsan.protechmm.com" class="text-center mb-4">Shwe Myanmar San <br>Oversea Employment Angecy</a>
-        </div>
-        <div class="col-6 text-center full mlrb">
-          <div class="card mb-4" style="box-shadow: 0px 8px 16px rgba(0,0,0,0.5);">
-            <div class="card-body">
-              <img src="../images/sbh.png" alt="" width="100%" height="300px">
-            </div>
-          </div>
-          <a href="http://shwebhonehein.com" class="text-center mb-4">Shwe Bhone Hein <br>Oversea Employment Angecy</a>
-        </div>
-    </div>
+  <div class="container my-5">
+  <div class="row g-4">
 
-    <div class="card-container row mb-no" style="margin-bottom:100px;">
-        <div class="col-6 text-center full mlrb">
-          <div class="card mb-4" style="box-shadow: 0px 8px 16px rgba(0,0,0,0.5);">
-            <div class="card-body">
-              <img src="../images/ds33.jpg" alt="" width="100%" height="300px">
-            </div>
-          </div>
-          <a href="http://shwemyanmarsan.protechmm.com" class="text-center mb-4">Dhama School Foundation Yangon</a>
-        </div>
-        <div class="col-6 text-center full mlrb">
-          <div class="card mb-4" style="box-shadow: 0px 8px 16px rgba(0,0,0,0.5);">
-            <div class="card-body">
-              <img src="../images/thaeinngu.png" alt="" width="100%" height="300px">
-            </div>
-          </div>
-          <a href="../images/thaeinngu.png" class="text-center mb-4">Thaeinngu</a>
-        </div>
-    </div>
-
-    <div class="card-container row mb-no" style="margin-bottom:20px;">
-      <div class="col-6 text-center full mlrb">
-        <div class="card mb-4" style="box-shadow: 0px 8px 16px rgba(0,0,0,0.5);">
-          <div class="card-body">
-            <img src="../images/asoka.png" alt="" width="100%" height="300px">
+    <!-- ShweMyanmarSan -->
+    <div class="col-md-4 col-sm-6">
+      <div class="client-card position-relative overflow-hidden rounded-3 shadow-sm">
+        <img src="../images/sms.png" class="img-fluid w-100 client-img" alt="Shwe Myanmar San">
+        <div class="client-overlay">
+          <div class="text-center text-white">
+            <h5>Shwe Myanmar San</h5>
+            <small>Oversea Employment Agency</small><br>
+            <a href="http://shwemyanmarsan.protechmm.com" class="btn btn-outline-light btn-sm mt-3" target="_blank">Visit Site</a>
           </div>
         </div>
-          <a href="http://asokabuddhiststudies.protechmm.com">Asoka Centre For Buddhist Studies</a>
       </div>
-        <div class="col-6 text-center full mlrb">
-          <div class="card mb-4" style="box-shadow: 0px 8px 16px rgba(0,0,0,0.5);">
-            <div class="card-body">
-              <img src="../images/linkmark.png" alt="" width="100%" height="300px">
-            </div>
-          </div>
-          <a href="../images/linkmark.png">Link Mark Company Limited</a>
-        </div>
     </div>
+
+    <!-- ShweBhoneHein -->
+    <div class="col-md-4 col-sm-6">
+      <div class="client-card position-relative overflow-hidden rounded-3 shadow-sm">
+        <img src="../images/sbh.png" class="img-fluid w-100 client-img" alt="Shwe Bhone Hein">
+        <div class="client-overlay">
+          <div class="text-center text-white">
+            <h5>Shwe Bhone Hein</h5>
+            <small>Oversea Employment Agency</small><br>
+            <a href="http://shwebhonehein.com" class="btn btn-outline-light btn-sm mt-3" target="_blank">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thaeinngu -->
+     <div class="col-md-4 col-sm-6">
+      <div class="client-card position-relative overflow-hidden rounded-3 shadow-sm">
+        <img src="../images/thaeinngu.jpg" class="img-fluid w-100 client-img" alt="ThaeInngu">
+        <div class="client-overlay">
+          <div class="text-center text-white">
+            <h5>Thaeinngu</h5>
+            <small>ဗဟိုဌာနချုပ် (မှော်ဘီ )</small><br>
+            <a href="http://thaeinngu.org" class="btn btn-outline-light btn-sm mt-3" target="_blank">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DhammaSchool -->
+     <div class="col-md-4 col-sm-6">
+      <div class="client-card position-relative overflow-hidden rounded-3 shadow-sm">
+        <img src="../images/ds33.jpg" class="img-fluid w-100 client-img" alt="ThaeInngu">
+        <div class="client-overlay">
+          <div class="text-center text-white">
+            <h5>Dhamma School Foundation</h5>
+            <small>Yangon</small><br>
+            <a href="../images/ds33.jpg" class="btn btn-outline-light btn-sm mt-3" target="_blank">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LinkMark -->
+     <div class="col-md-4 col-sm-6">
+      <div class="client-card position-relative overflow-hidden rounded-3 shadow-sm">
+        <img src="../images/linkmark.png" class="img-fluid w-100 client-img" alt="ThaeInngu">
+        <div class="client-overlay">
+          <div class="text-center text-white">
+            <h5>Link Mark Company Limited</h5>
+            <small>Fish Export Trading</small><br>
+            <a href="../images/linkmark.png" class="btn btn-outline-light btn-sm mt-3" target="_blank">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Asoka -->
+     <div class="col-md-4 col-sm-6">
+      <div class="client-card position-relative overflow-hidden rounded-3 shadow-sm">
+        <img src="../images/asoka.png" class="img-fluid w-100 client-img" alt="ThaeInngu">
+        <div class="client-overlay">
+          <div class="text-center text-white">
+            <h5>Asoka</h5>
+            <small>Center of Buddhist Studies</small><br>
+            <a href="http://asokabuddhiststudies.com" class="btn btn-outline-light btn-sm mt-3" target="_blank">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+</div>
 
 <?php include '../css/footer.php'; ?>

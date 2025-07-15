@@ -874,7 +874,7 @@ if (!empty($_SESSION['language']) && $_SESSION['language'] == 'Eng' || $_SESSION
   <!-- Home Screen -->
   <div class="headerimg d-flex" style="padding-top:17%; padding-left:20%;">
     <div class="col-8 me-2 ms-5 full text-center introdiv float-up">
-      <h2 class="indextext mb-4 text-light" <?php if($_SESSION['language'] == 'eng'){ ?>style="font-size:45px; font-weight:bold;"<?php }else{ ?>style="font-size:33px; font-weight:bold;"<?php } ?>>
+      <h2 class="indextext mb-4 text-light" <?php if($_SESSION['language'] == 'eng'){ ?>style="font-size:40px; font-weight:bold;"<?php }else{ ?>style="font-size:33px; font-weight:bold;"<?php } ?>>
         <?php echo $home['main_intro']['title']; ?>
       </h2>
       <span class="text-light welcome">
